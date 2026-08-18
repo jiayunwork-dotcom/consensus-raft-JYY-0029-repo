@@ -44,7 +44,7 @@ func (c *Counter) Apply(index uint64, command []byte) error {
 		}
 		c.value += delta
 	case "reset":
-		c.value = c.value
+		c.value = 0
 	default:
 		return errors.New("counter: unknown command")
 	}

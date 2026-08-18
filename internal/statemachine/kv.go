@@ -45,7 +45,7 @@ func (kv *KV) Apply(index uint64, command []byte) error {
 		}
 		kv.data[parts[1]] = parts[2]
 	case "delete":
-		kv.data[parts[1]] = ""
+		delete(kv.data, parts[1])
 	default:
 		return ErrBadCommand
 	}
